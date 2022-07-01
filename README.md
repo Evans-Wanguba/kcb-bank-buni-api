@@ -1,7 +1,7 @@
 # KCB Bank Buni API
 
-This is a PHP package for KCB Bank Buni web service integration. The API is a set of generic Accounting functions that 
-is designed to cater for a wide-ranging of functions that allows a merchant to have access to the Sage Evolution system.
+This is a PHP package for KCB Bank Buni web service integration. Buni is designed for the modern innovator. Developers can now leverage on the KCB API to offer their customers a seamless digital experience on their platforms. Buni helps you integrate a unified payment system onto your website or app, allowing customers to easily pay for your product or service.
+For more information, check out [KCB Buni API](https://sandbox.buni.kcbgroup.com/devportal/apis) Guide.
 
 ## Installation
 
