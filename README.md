@@ -7,7 +7,7 @@ is designed to cater for a wide-ranging of functions that allows a merchant to h
 
 Pull in the package through Composer.
 ```bash
-composer require evanswanguba/sage-evolution-freedom-api
+composer require evanswanguba/kcb-bank-buni-api
 ```
 
 Create the following variables in your .env file.
