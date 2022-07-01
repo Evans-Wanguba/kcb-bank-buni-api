@@ -1,6 +1,6 @@
-# Sage Evolution Freedom API
+# KCB Bank Buni API
 
-This is a PHP package for Sage Evolution Freedom web service integration. The API is a set of generic Accounting functions that 
+This is a PHP package for KCB Bank Buni web service integration. The API is a set of generic Accounting functions that 
 is designed to cater for a wide-ranging of functions that allows a merchant to have access to the Sage Evolution system.
 
 ## Installation
