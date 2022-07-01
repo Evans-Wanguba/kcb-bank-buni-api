@@ -17,7 +17,16 @@ BUNI_API_SECRET=ApiSecret
 ```
 
 ## Supported Functions
-- Account Details
+- AccountInfoDetailsOfVooma
+- AccountInfoOfKCBAccounts
+- AccountVerificationNon-KCBviaPesaLink
+- AgencyCallbackService
+- AgentDeposit
+- AgentQueryCustomer
+- AgentWithdrawal
+- Anti-MoneyLaunderingAPI
+- Anti-MoneyLaunderingAPIScreening
+- APIEncryptionHelperTool
 
 ## Usage
 To make a create customer request is simple. Just initiate the `BuniApi` and post the transaction:
