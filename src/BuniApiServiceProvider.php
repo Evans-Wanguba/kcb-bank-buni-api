@@ -7,7 +7,7 @@
  * @Last Modified time: 2021-07-16 17:15:18
  */
 
-namespace EvansWanguba\Buni;
+namespace EvansWanguba\KcbBank;
 
 use Illuminate\Support\ServiceProvider;
 use EvansWanguba\KcbBank\BuniApi;

@@ -12,21 +12,16 @@ composer require evanswanguba/kcb-bank-buni-api
 
 Create the following variables in your .env file.
 ```bash
-BUNI_API_KEY=ApiKey
-BUNI_API_SECRET=ApiSecret
+BUNI_ACCESS_TOKEN=AccessToken
 ```
 
 ## Supported Functions
-- AccountInfoDetailsOfVooma
-- AccountInfoOfKCBAccounts
-- AccountVerificationNon-KCBviaPesaLink
-- AgencyCallbackService
-- AgentDeposit
-- AgentQueryCustomer
-- AgentWithdrawal
-- Anti-MoneyLaunderingAPI
-- Anti-MoneyLaunderingAPIScreening
-- APIEncryptionHelperTool
+- FundsTransferAPIService
+- MpesaExpressAPIService
+- MpesaTransactionInfo
+- QueryCoreTransactionStatus
+- ValidateExternalBill
+- VendingGatewayApis
 
 ## Usage
 To make a create customer request is simple. Just initiate the `BuniApi` and post the transaction:

@@ -1,6 +1,6 @@
 <?php
 
-namespace EvansWanguba\Buni;
+namespace EvansWanguba\KcbBank;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Promise;
@@ -34,9 +34,9 @@ class BuniApi
     {
         $this->client = new Client([
             'base_uri' => $this->baseUri,
-            'auth' => [
-                env('BUNI_API_KEY'), 
-                env('BUNI_API_SECRET')
+            'headers' => [
+                'Authorization' => 'Bearer ' . env('BUNI_ACCESS_TOKEN'),
+                'Accept'        => 'application/json',
             ]
         ]);
     }
