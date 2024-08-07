@@ -35,4 +35,4 @@ use EvansWanguba\KcbBank\BuniApi;
 
 require "vendor/autoload.php";
 
-$sage = new BuniApi();
+$buni = new BuniApi();

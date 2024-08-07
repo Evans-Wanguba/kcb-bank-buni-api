@@ -1,6 +1,6 @@
 <?php
 
-namespace EvansWanguba\Sage;
+namespace EvansWanguba\Buni;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Promise;
@@ -18,7 +18,7 @@ class BuniApi
      *
      * @var string
      */
-    private $baseUri = 'http://YourIp:5000/freedom.core/DatabaseName/SDK/Rest/';
+    private $baseUri = 'https://sandbox.buni.kcbgroup.com/devportal/apis/';
 
     /**
      * The Guzzle HTTP Client.
@@ -42,32 +42,114 @@ class BuniApi
     }
 
     /**
-     * Initiate a get request and send the information to Sage.
+     * Initiate a FundsTransferAPIService request.
      *
      * @return string
      */
-    public function getTransaction($initiateEndpoint)
+    public function postFundsTransferAPIService($params)
     {
         try {
-            $response = $this->client->request('GET', $initiateEndpoint);
+            $response = $this->client->request('POST', 'fundstransfer', [
+                'json' => $params
+            ]);
 
             $statuscode = $response->getStatusCode();
 
-            return $response->getBody()->getContents();
+            return json_decode($response->getBody()->getContents());
         } catch (\Exception $exception) {
             return $exception->getMessage();
         }
     }
 
     /**
-     * Initiate a post request and send the information to Sage.
+     * Initiate a MpesaExpressAPIService request.
      *
      * @return string
      */
-    public function postTransaction($initiateEndpoint, $params)
+    public function postMpesaExpressAPIService($params)
     {
         try {
-            $response = $this->client->request('POST', $initiateEndpoint, [
+            $response = $this->client->request('POST', 'mm/api/request', [
+                'json' => $params
+            ]);
+
+            $statuscode = $response->getStatusCode();
+
+            return json_decode($response->getBody()->getContents());
+        } catch (\Exception $exception) {
+            return $exception->getMessage();
+        }
+    }
+
+    /**
+     * Initiate a MpesaTransactionInfo request.
+     *
+     * @return string
+     */
+    public function postMpesaTransactionInfo($params)
+    {
+        try {
+            $response = $this->client->request('POST', 'mpesa/transactioninfo', [
+                'json' => $params
+            ]);
+
+            $statuscode = $response->getStatusCode();
+
+            return json_decode($response->getBody()->getContents());
+        } catch (\Exception $exception) {
+            return $exception->getMessage();
+        }
+    }
+
+    /**
+     * Initiate a QueryCoreTransactionStatus request.
+     *
+     * @return string
+     */
+    public function postQueryCoreTransactionStatus($params)
+    {
+        try {
+            $response = $this->client->request('POST', 'v1/core/t24/querytransaction', [
+                'json' => $params
+            ]);
+
+            $statuscode = $response->getStatusCode();
+
+            return json_decode($response->getBody()->getContents());
+        } catch (\Exception $exception) {
+            return $exception->getMessage();
+        }
+    }
+
+    /**
+     * Initiate a ValidateExternalBill request.
+     *
+     * @return string
+     */
+    public function postValidateExternalBill($params)
+    {
+        try {
+            $response = $this->client->request('POST', 'kcb/vpi/api/v1/validate-external-bill', [
+                'json' => $params
+            ]);
+
+            $statuscode = $response->getStatusCode();
+
+            return json_decode($response->getBody()->getContents());
+        } catch (\Exception $exception) {
+            return $exception->getMessage();
+        }
+    }
+
+    /**
+     * Initiate a VendingGatewayApis request.
+     *
+     * @return string
+     */
+    public function postVendingGatewayApis($params)
+    {
+        try {
+            $response = $this->client->request('POST', 'kcb/vendingGateway/v1', [
                 'json' => $params
             ]);
 

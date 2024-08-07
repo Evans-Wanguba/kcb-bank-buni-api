@@ -1,6 +1,6 @@
 {
     "name": "evanswanguba/kcb-bank-buni-api",
-    "keywords": ["laravel sage", "sage evolution", "freedom api"],
+    "keywords": ["laravel buni", "buni api", "kcb bank api"],
     "description": "This is a PHP package for handling KCB Bank Buni web service integration",
     "license": "MIT",
     "authors": [
