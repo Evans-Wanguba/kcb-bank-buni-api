@@ -7,7 +7,7 @@ For more information, check out [KCB Buni API](https://sandbox.buni.kcbgroup.com
 
 Pull in the package through Composer.
 ```bash
-composer require evanswanguba/kcb-bank-buni-api
+composer require evans-wanguba/kcb-bank-buni-api
 ```
 
 Create the following variables in your .env file.

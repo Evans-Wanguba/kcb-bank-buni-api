@@ -1,5 +1,5 @@
 {
-    "name": "evanswanguba/kcb-bank-buni-api",
+    "name": "evans-wanguba/kcb-bank-buni-api",
     "keywords": ["laravel buni", "buni api", "kcb bank api"],
     "description": "This is a PHP package for handling KCB Bank Buni web service integration",
     "license": "MIT",
