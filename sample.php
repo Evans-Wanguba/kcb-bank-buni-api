@@ -6,11 +6,16 @@ require "vendor/autoload.php";
 
 $buni = new BuniApi();
 
-// BancAssuranceFileService
+/*
+* BancAssuranceFileService
+*/
 $params = array();
 $buni->postBancAssuranceFileService($params);
 
-// FundsTransferAPIService
+
+/*
+* FundsTransferAPIService
+*/
 $fundsTransferParams = [
     "beneficiaryDetails"    => "JOHN DOE",
     "companyCode"           => "KE0010001",
@@ -25,7 +30,10 @@ $fundsTransferParams = [
 ];
 $buni->postFundsTransferAPIService($fundsTransferParams);
 
-// MpesaExpressAPIService
+
+/*
+* MpesaExpressAPIService
+*/
 $mpesaExpressParams = [
     "phoneNumber"               => "254700000000",
     "amount"                    => "10",
@@ -38,18 +46,30 @@ $mpesaExpressParams = [
 ];
 $buni->postMpesaExpressAPIService($mpesaExpressParams);
 
-// MpesaTransactionInfo
+
+/*
+* MpesaTransactionInfo
+*/
 $params = array();
 $buni->postMpesaTransactionInfo($params);
 
-// QueryCoreTransactionStatus
+
+/*
+* QueryCoreTransactionStatus
+*/
 $params = array();
 $buni->postQueryCoreTransactionStatus($params);
 
-// ValidateExternalBill
+
+/*
+* ValidateExternalBill
+*/
 $params = array();
 $buni->postValidateExternalBill($params);
 
-// VendingGatewayApis
+
+/*
+* VendingGatewayApis
+*/
 $params = array();
 $buni->postVendingGatewayApis($params);
