@@ -45,6 +45,7 @@ $fundsTransferParams = array(
     "beneficiaryBankCode"   => "01"
 );
 $buni->postFundsTransferAPIService($fundsTransferParams);
+```
 
 see `sample.php` for more examples.
 Or email me at `ewanguba@gmail.com`
