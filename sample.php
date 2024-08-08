@@ -11,7 +11,7 @@ $params = array();
 $buni->postBancAssuranceFileService($params);
 
 // FundsTransferAPIService
-$fundsTransferParams = array(
+$fundsTransferParams = [
     "beneficiaryDetails"    => "JOHN DOE",
     "companyCode"           => "KE0010001",
     "creditAccountNumber"   => "1279287799",
@@ -22,7 +22,7 @@ $fundsTransferParams = array(
     "transactionReference"  => "FT1234567890",
     "transactionType"       => "IF",
     "beneficiaryBankCode"   => "01"
-);
+];
 $buni->postFundsTransferAPIService($fundsTransferParams);
 
 // MpesaExpressAPIService

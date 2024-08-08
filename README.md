@@ -30,9 +30,11 @@ To make a fund transfer request is simple. Just initiate the `BuniApi` and post 
 ```php
 use EvansWanguba\KcbBank\BuniApi;
 
+require "vendor/autoload.php";
+
 // FundsTransferAPIService
 $buni = new BuniApi();
-$fundsTransferParams = array(
+$fundsTransferParams = [
     "beneficiaryDetails"    => "JOHN DOE",
     "companyCode"           => "KE0010001",
     "creditAccountNumber"   => "1279287799",
@@ -43,9 +45,10 @@ $fundsTransferParams = array(
     "transactionReference"  => "FT1234567890",
     "transactionType"       => "IF",
     "beneficiaryBankCode"   => "01"
-);
+];
 $buni->postFundsTransferAPIService($fundsTransferParams);
 ```
 
-see `sample.php` for more examples.
+## Support
+See `sample.php` for more examples.
 Or email me at `ewanguba@gmail.com`
