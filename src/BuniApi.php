@@ -18,7 +18,7 @@ class BuniApi
      *
      * @var string
      */
-    private $baseUri = 'https://sandbox.buni.kcbgroup.com/devportal/apis/';
+    private $baseUri;
 
     /**
      * The Guzzle HTTP Client.
@@ -32,6 +32,13 @@ class BuniApi
      */
     public function __construct()
     {
+        if(env('BUNI_ENV') == 'sandbox') {
+            $this->baseUri = 'https://uat.buni.kcbgroup.com/';
+        }
+        else {
+            $this->baseUri = 'https://buni.kcbgroup.com/';
+        }
+
         $this->client = new Client([
             'base_uri' => $this->baseUri,
             'headers' => [
@@ -42,6 +49,26 @@ class BuniApi
     }
 
     /**
+     * Initiate a BancAssuranceFileService request.
+     *
+     * @return string
+     */
+    public function postBancAssuranceFileService($params)
+    {
+        try {
+            $response = $this->client->request('POST', 'bancassurance/files/readbyid/1.0.0', [
+                'json' => $params
+            ]);
+
+            $statuscode = $response->getStatusCode();
+
+            return json_decode($response->getBody()->getContents());
+        } catch (\Exception $exception) {
+            return $exception->getMessage();
+        }
+    }
+
+    /**
      * Initiate a FundsTransferAPIService request.
      *
      * @return string
@@ -49,7 +76,7 @@ class BuniApi
     public function postFundsTransferAPIService($params)
     {
         try {
-            $response = $this->client->request('POST', 'fundstransfer', [
+            $response = $this->client->request('POST', 'fundstransfer/1.0.0/api/v1/transfer', [
                 'json' => $params
             ]);
 
@@ -69,7 +96,7 @@ class BuniApi
     public function postMpesaExpressAPIService($params)
     {
         try {
-            $response = $this->client->request('POST', 'mm/api/request', [
+            $response = $this->client->request('POST', 'mm/api/request/1.0.0', [
                 'json' => $params
             ]);
 
@@ -89,7 +116,7 @@ class BuniApi
     public function postMpesaTransactionInfo($params)
     {
         try {
-            $response = $this->client->request('POST', 'mpesa/transactioninfo', [
+            $response = $this->client->request('POST', 'mpesa/transactioninfo/1.0.0', [
                 'json' => $params
             ]);
 
@@ -109,7 +136,7 @@ class BuniApi
     public function postQueryCoreTransactionStatus($params)
     {
         try {
-            $response = $this->client->request('POST', 'v1/core/t24/querytransaction', [
+            $response = $this->client->request('POST', 'v1/core/t24/querytransaction/1.0.0', [
                 'json' => $params
             ]);
 
@@ -129,7 +156,7 @@ class BuniApi
     public function postValidateExternalBill($params)
     {
         try {
-            $response = $this->client->request('POST', 'kcb/vpi/api/v1/validate-external-bill', [
+            $response = $this->client->request('POST', 'kcb/vpi/api/v1/validate-external-bill/1.0.0', [
                 'json' => $params
             ]);
 
@@ -149,7 +176,7 @@ class BuniApi
     public function postVendingGatewayApis($params)
     {
         try {
-            $response = $this->client->request('POST', 'kcb/vendingGateway/v1', [
+            $response = $this->client->request('POST', 'kcb/vendingGateway/v1/1.0.0', [
                 'json' => $params
             ]);
 
