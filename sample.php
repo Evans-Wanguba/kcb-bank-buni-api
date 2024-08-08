@@ -64,8 +64,12 @@ $buni->postQueryCoreTransactionStatus($params);
 /*
 * ValidateExternalBill
 */
-$params = array();
-$buni->postValidateExternalBill($params);
+$validateExternalBillParams = [
+    "requestId"                 => "UGC002001",
+    "customerReference"         => "1020220001046912",
+    "organizationReference"     => "572572"
+];
+$buni->postValidateExternalBill($validateExternalBillParams);
 
 
 /*

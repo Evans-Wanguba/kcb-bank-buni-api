@@ -156,7 +156,7 @@ class BuniApi
     public function postValidateExternalBill($params)
     {
         try {
-            $response = $this->client->request('POST', 'kcb/vpi/api/v1/validate-external-bill/1.0.0', [
+            $response = $this->client->request('POST', 'kcb/vpi/api/v1/validate-external-bill/1.0.0/execute', [
                 'json' => $params
             ]);
 
