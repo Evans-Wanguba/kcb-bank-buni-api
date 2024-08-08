@@ -136,7 +136,7 @@ class BuniApi
     public function postQueryCoreTransactionStatus($params)
     {
         try {
-            $response = $this->client->request('POST', 'v1/core/t24/querytransaction/1.0.0', [
+            $response = $this->client->request('POST', 'v1/core/t24/querytransaction/1.0.0/api/transactioninfo', [
                 'json' => $params
             ]);
 

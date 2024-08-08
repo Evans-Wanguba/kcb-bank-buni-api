@@ -57,8 +57,36 @@ $buni->postMpesaTransactionInfo($params);
 /*
 * QueryCoreTransactionStatus
 */
-$params = array();
-$buni->postQueryCoreTransactionStatus($params);
+$queryCoreTransactionStatusParams = [
+    "header" => [
+        "messageID"             => "{{$guid}}",
+        "featureCode"           => "101",
+        "featureName"           => "FinancialInquiries",
+        "serviceCode"           => "1004",
+        "serviceName"           => "TransactionInfo",
+        "serviceSubCategory"    => "ACCOUNT",
+        "minorServiceVersion"   => "1.0",
+        "channelCode"           => "206",
+        "channelName"           => "ibank",
+        "routeCode"             => "001",
+        "timeStamp"             => "22222",
+        "serviceMode"           => "sync",
+        "subscribeEvents"       => "1",
+        "callBackURL"           => ""  
+    ],
+    "requestPayload" => [
+        "transactionInfo" => [
+            "primaryData" => [
+                "businessKey"       => "FT220367DV7J",
+                "businessKeyType"   => "FT.REF"
+            ],
+            "additionalDetails" => [
+                "companyCode"       => "KE0010001"
+            ]
+        ]
+    ]
+];
+$buni->postQueryCoreTransactionStatus($queryCoreTransactionStatusParams);
 
 
 /*
