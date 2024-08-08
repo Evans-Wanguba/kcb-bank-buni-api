@@ -96,7 +96,7 @@ class BuniApi
     public function postMpesaExpressAPIService($params)
     {
         try {
-            $response = $this->client->request('POST', 'mm/api/request/1.0.0', [
+            $response = $this->client->request('POST', 'mm/api/request/1.0.0/stkpush', [
                 'json' => $params
             ]);
 

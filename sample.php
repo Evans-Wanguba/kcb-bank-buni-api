@@ -26,8 +26,17 @@ $fundsTransferParams = [
 $buni->postFundsTransferAPIService($fundsTransferParams);
 
 // MpesaExpressAPIService
-$params = array();
-$buni->postMpesaExpressAPIService($params);
+$mpesaExpressParams = [
+    "phoneNumber"               => "254700000000",
+    "amount"                    => "10",
+    "invoiceNumber"             => "ONETILLNO#YOURREF",
+    "sharedShortCode"           => true,
+    "orgShortCode"              => "",
+    "orgPassKey"                => "",
+    "callbackUrl"               => "https://posthere.io/f613-4b7f-b82b",
+    "transactionDescription"    => "school fee payment"
+];
+$buni->postMpesaExpressAPIService($mpesaExpressParams);
 
 // MpesaTransactionInfo
 $params = array();
