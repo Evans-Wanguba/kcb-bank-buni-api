@@ -16,7 +16,7 @@ BUNI_ACCESS_TOKEN=AccessToken
 BUNI_ENV=sandbox
 ```
 
-## Supported Functions
+## Supported API Services
 - BancAssuranceFileService
 - FundsTransferAPIService
 - MpesaExpressAPIService
